@@ -80,7 +80,7 @@ def getRequestResults(site):
 #zipcode,maxDistance, and data variables should come from website, fileLocations should come from args file
 maxDistance = 100
 zipcode = '54401'
-dataVariables = 'sss?sort=priceasc&query=f250'
+dataVariables = 'sso?sort=priceasc&query=f250'
 csvFile = 'zipcode.csv'
 clFile = 'clData.csv'
 
