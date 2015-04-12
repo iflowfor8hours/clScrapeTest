@@ -11,6 +11,7 @@ function buildPage(){
   checkItems(make);
   checkItems(model);
   checkItems(keywords);  
+    
 }
 
 function addItems(type, vals){
@@ -23,8 +24,9 @@ function addItems(type, vals){
     var makeLabel = document.createElement('label');
     makeLabel.innerHTML = vals[x];
     var makeCb = document.createElement("input");
+    makeCb.name = vals[x];
     makeCb.id = vals[x];
-    makeCb.value = vals[x];
+    makeCb.value = type;
     makeCb.type = "checkbox";
     myModel.appendChild(makeLabel);
     myModel.appendChild(makeCb);
@@ -38,10 +40,9 @@ function checkItems(vals){
   }
 }
 
-function displayData(clData){
-  //var results = document.getElementById('results');
-  console.log("HELLO");
-  console.log(clData);
-  console.log("GBYE");
-  //results.innerHTML += clData;
+function displayData(formData){
+  var results = document.getElementById('results');
+  console.log(formData.hello);
+  
+  results.innerHTML += formData.hello;
 }

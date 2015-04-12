@@ -13,16 +13,16 @@
       <form action="" method="post" enctype='multipart/form-data'>
         <input type='hidden' name='inputType' value='GetValues'>
         <label>Search Center Zip Code: </label>
-        <input type="text" width="5" style= "float:right" value="54426"><br /><br />
+        <input type="text" width="5" style= "float:right" name="zipCode" value="54426"><br /><br />
         <label>Enter Search Radius in Miles:</label>
-        <input type="text" width="5" style= "float:right" value="50"><br /><br />
+        <input type="text" width="5" style= "float:right" name="searchRadius" value="50"><br /><br />
         
         <div id='make'></div>
         <div id='model'></div>
         
         <label><b>Year</b></label><br />
         Min Year <input type="text" width="5" style= "float:right" name="minYear" value="2004"><br /><br />
-        Max Year <input type="text" width="5" style= "float:right" name="minYear" value="2008"><br /><br />
+        Max Year <input type="text" width="5" style= "float:right" name="maxYear" value="2008"><br /><br />
         
         <div id='keywords'></div>
         <input type='submit' value ='Search'>
@@ -32,11 +32,16 @@
       {% if CRS %}
         <script type="text/javascript">
           window.onload = function(){
+            buildPage();
             displayData({{ CRS|tojson }});
           }
+        </script>
+      {% else %}
+        <script type="text/javascript"> 
+          window.onload = buildPage();
         </script>
       {% endif %}
     </div>
   </body>
-  <script type="text/javascript"> window.onload = buildPage()</script>
+  
 </html>

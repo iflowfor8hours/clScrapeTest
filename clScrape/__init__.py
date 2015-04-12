@@ -8,27 +8,16 @@ app = Flask(__name__, static_url_path='')
 @app.route('/',methods=['POST'])
 def setFunction():
   inputType = request.form['inputType']
-  '''
-    if(inputType == 'upload'):
-    from housing.upload import upload
-    results = upload(app)
   
-  elif(inputType == 'CurrentRentStatus'):
-    from housing.crs import crs
-    currentMonth = time.strftime("%b:%Y")
-    (month,year) = currentMonth.split(':',1)
-    timeFrame = {'startMonth':month,'endMonth':month,'startYear':year,'endYear':year,'msg':'CRS'}
-    results = crs(app,timeFrame)
-  '''
   if(inputType == 'GetValues'):
     print "MADE IT HERE"
     from clScrape.getValues import getValues
-    results = getValues(app)
-    print str(results)
+    myResults = getValues(app,request.form)
+    
   else:
     print inputType + ": not found"
     
-  return results
+  return myResults
 
 if __name__ == 'main':
   app.run()
