@@ -39,6 +39,9 @@ function checkItems(vals){
 }
 
 function displayData(clData){
-  var results = document.getElementById('results')
-  results.innerHTML += clData;
+  //var results = document.getElementById('results');
+  console.log("HELLO");
+  console.log(clData);
+  console.log("GBYE");
+  //results.innerHTML += clData;
 }

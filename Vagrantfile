@@ -9,8 +9,8 @@ cd /vagrant
 virtualenv --no-site-packages .
 source /vagrant/bin/activate
 pip install -r /vagrant/requirements.txt
-cd housing
-python manage.py runserver > /tmp/housing.log 2>&1 &
+cd clScrape
+python manage.py runserver > /tmp/scrape.log 2>&1 &
 echo "App running on 0.0.0.0:5000, vagrant ssh; tail -f /tmp/housing.log; hit it with http://localhost:5000"
 SCRIPT
 

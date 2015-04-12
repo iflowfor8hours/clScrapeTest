@@ -21,8 +21,10 @@ def setFunction():
     results = crs(app,timeFrame)
   '''
   if(inputType == 'GetValues'):
+    print "MADE IT HERE"
     from clScrape.getValues import getValues
     results = getValues(app)
+    print str(results)
   else:
     print inputType + ": not found"
     
