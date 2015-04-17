@@ -9,7 +9,6 @@ app = Flask(__name__, static_url_path='')
 def setFunction():
   inputType = request.form['inputType']
   if(inputType == 'GetValues'):
-    print "MADE IT HERE"
     from clScrape.getValues import getValues
     myResults = getValues(app,request.form)
     
