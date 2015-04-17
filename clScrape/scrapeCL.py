@@ -2,7 +2,6 @@ from urllib2 import Request, urlopen, URLError
 import json
 import csv
 import math
-import xml.etree.ElementTree as ET
 
 def zipIt(zipcode,csvFile):
   with open(csvFile, mode='r') as infile:

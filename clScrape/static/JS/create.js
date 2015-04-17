@@ -43,6 +43,7 @@ function checkItems(vals){
 function displayData(formData){
   var results = document.getElementById('results');
   console.log(formData.hello);
-  
-  results.innerHTML += formData.hello;
+  for(var x=0; x<formData.hello.length;x++){
+    results.innerHTML += formData.hello[x];
+  }
 }

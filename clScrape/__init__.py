@@ -1,4 +1,4 @@
-import os, csv, pymongo, time
+import os, csv
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory,jsonify
 from werkzeug import secure_filename
 
@@ -8,7 +8,6 @@ app = Flask(__name__, static_url_path='')
 @app.route('/',methods=['POST'])
 def setFunction():
   inputType = request.form['inputType']
-  
   if(inputType == 'GetValues'):
     print "MADE IT HERE"
     from clScrape.getValues import getValues
