@@ -65,6 +65,7 @@ def getKeyWords(stringList,vals):
     s = s + 'query="'
     for keywords, value in vals.iteritems():
       if value == 'keywords':
+        keywords = keywords.replace(" ","+")
         returnList.append(s + keywords +'"')  
   if(len(returnList)>0):
     return returnList
