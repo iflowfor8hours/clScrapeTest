@@ -1,5 +1,6 @@
 def getStrings(applicableSites, vals):
   finalStringList = []
+  
   for ap in applicableSites:
     stringList = ["http://" + ap + ".craigslist.org/search/sso?"]
     stringList = getMake(stringList,vals)
@@ -7,8 +8,8 @@ def getStrings(applicableSites, vals):
     stringList = getYears(stringList,vals)
     stringList = getKeyWords(stringList,vals)
     for s in stringList:
-      finalStringList.append(s)
-  
+      finalStringList.append({'string':s[0],'querySet':s[1]})
+    
   return finalStringList
 
 def getMake(searchStrings,vals):
@@ -66,7 +67,7 @@ def getKeyWords(stringList,vals):
     for keywords, value in vals.iteritems():
       if value == 'keywords':
         keywords = keywords.replace(" ","+")
-        returnList.append(s + keywords +'"')  
+        returnList.append([s + keywords +'"',keywords])  
   if(len(returnList)>0):
     return returnList
   return stringList

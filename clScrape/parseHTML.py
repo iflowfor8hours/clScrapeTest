@@ -23,7 +23,7 @@ def parseHTML(myPage,linkRoot):
       try:
         trucksObj['price'] = t.xpath('//span[@class="price"]/text()')[0]
       except:
-        truckObj['price'] = "$0"
+        trucksObj['price'] = "$0"
       try:  
         trucksObj['date'] = t.xpath('//time/@datetime')[0]
       except:
