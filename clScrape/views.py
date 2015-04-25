@@ -6,5 +6,5 @@ pages = Blueprint('pages', __name__, template_folder='templates')
 class BaseView(MethodView):
   def get(self):
     return render_template('base.html')
-
+#Site is a single page
 pages.add_url_rule('/',view_func=BaseView.as_view('pages'))

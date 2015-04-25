@@ -1,19 +1,21 @@
+/*Used to Create Make checkboxes*/
+var make = ['Ford'];
+/*Used to Create Model checkboxes*/
+var model = ['F150','F-150','F250','F-250'];
+/*Used to Create keyword checkboxes*/
+var keywords = ['5.4L', '5.4 engine', 'needs', 'cam phasers', 
+                'knock', 'needs work', 'needs engine', 
+                'needs new engine', 'crew cab', 'crewcab'];
+
+/*Used to build the page on load*/
 function buildPage(){
-  var make = ['Ford'];
-  var model = ['F150','F-150','F250','F-250'];
-  var keywords = ['5.4L', '5.4 engine', 'needs', 'cam phasers', 
-                  'knock', 'needs work', 'needs engine', 'needs new engine'];
-  
   addItems('make', make);
   addItems('model', model);
   addItems('keywords', keywords);
-  
-  checkItems(make);
-  checkItems(model);
-  checkItems(keywords);  
-    
+  checkAll();
 }
 
+/*add elements to the page*/
 function addItems(type, vals){
   var myModel = document.getElementById(type);
   var nameLabel = document.createElement('label');
@@ -34,12 +36,31 @@ function addItems(type, vals){
   myModel.innerHTML += "<br /><br />";   
 }
 
+/*check all*/
+function checkAll(){
+  checkItems(make);
+  checkItems(model);
+  checkItems(keywords); 
+}
 function checkItems(vals){
   for(var x=0; x<vals.length; x++){
     document.getElementById(vals[x]).checked = true;
   }
 }
 
+/*uncheck all*/
+function uncheckAll(){
+  uncheckItems(make);
+  uncheckItems(model);
+  uncheckItems(keywords); 
+}
+function uncheckItems(vals){
+  for(var x=0; x<vals.length; x++){
+    document.getElementById(vals[x]).checked = false;
+  }
+}
+
+/*Used to display Scrape Results*/
 function displayData(formData){
   var results = document.getElementById('results');
   console.log(formData.hello);

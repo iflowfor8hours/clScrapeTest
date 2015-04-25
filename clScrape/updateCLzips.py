@@ -2,6 +2,10 @@ from urllib2 import Request, urlopen, URLError
 import json
 import csv
 
+#NOT DIRECTLY PART OF THE WEBSITE
+#Run this script separately if the craigslist sites change names. 
+#It will update the CSV used to determine sites in the radius
+
 def getClSites():
   request = Request('http://www.craigslist.org/about/areas.json')
   try:

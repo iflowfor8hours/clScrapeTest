@@ -1,23 +1,30 @@
 from lxml import html
+import logging
 
-import re
+#Parse HTML using xpath, interested in <row>...</row> and <h4>...</h4>
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='[%(levelname)s] (%(threadName)-10s_ %(message)s',
+                    )
 
 def parseHTML(myPage,linkRoot):
   truckValues = []
-  tree = html.fromstring(myPage)
   try:
+    tree = html.fromstring(myPage)
+    #get all rows and the h4 demarcation point (local vs nearby) from full CL page
     trucks = tree.xpath('//div[@class="content"]/p[@class="row"] | //div[@class="content"]/h4[@class="ban nearby"]')
   except:
-    print "Failed to make tree"
+    logging.debug("Failed to make tree")
     return []
   
   for truck in trucks:
     trucksObj = {}
     flag = 0
     if(truck.tag == "h4"):
-      print "Breaking for h4"
+      #exit when we have processed all local results
       break
     else:
+      #make a new searchable tree (t) for each local truck listing <row> ... </row>
       truck = html.tostring(truck)
       t = html.fromstring(truck)
       try:
@@ -36,11 +43,11 @@ def parseHTML(myPage,linkRoot):
         link = t.xpath('//span[@class="pl"]/a/@href')[0]
         trucksObj['link'] = linkRoot + link
       except:
-        flag = 1
+        flag = 1 #disallow if there is no link
       try:  
         trucksObj['id'] = t.xpath('//span[@class="pl"]/a/@data-id')[0]
       except:
-        flag = 1
+        trucksObj['id'] = '0000'
       try:  
         trucksObj['description'] = t.xpath('//span[@class="pl"]/a/text()')[0]
       except:
@@ -51,9 +58,9 @@ def parseHTML(myPage,linkRoot):
           trucksObj['town']= trucksObj['town'].replace('(','')
           trucksObj['town']= trucksObj['town'].replace(')','')
         except:
-          "Couldn't Remove () from town"
+          "Couldn't Remove () from (TOWN)"
         truckValues.append(trucksObj)
       else:
-        print "Skipping for malformed data " + str(trucksObj)
+        logging.debug("Skipping for malformed data, missing link: %s" % trucksObj )
         
   return truckValues

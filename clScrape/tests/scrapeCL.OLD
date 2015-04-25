@@ -1,8 +1,9 @@
 from urllib2 import Request, urlopen, URLError
-import json
+#import json
 import csv
 import math
 
+#THIS IS JUST A TEST FILE, NOT USED FOR WEBSITE
 def zipIt(zipcode,csvFile):
   with open(csvFile, mode='r') as infile:
     reader = csv.reader(infile)
@@ -76,7 +77,7 @@ def getRequestResults(site):
   except:
     print 'nothing to see here'
 
-#zipcode,maxDistance, and data variables should come from website, fileLocations should come from args file
+#zipcode,maxDistance, and data variables should come from website
 maxDistance = 100
 zipcode = '54401'
 dataVariables = 'sso?sort=priceasc&query=f250'

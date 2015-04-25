@@ -1,5 +1,12 @@
 import csv
 import math
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    format='[%(levelname)s] (%(threadName)-10s_ %(message)s',
+                    )
+#Returns a list of CL sites within X miles of zip code Y
+#Zip code and radius provided by user on web page
+#CL site info and zipcode info stored in CSV files
 
 def getSites(zipCode,radius):
   csvFile = 'zipcode.csv'
@@ -12,7 +19,7 @@ def getSites(zipCode,radius):
     distance = distance_on_unit_sphere(c["LAT"], c["LON"], zipObj["LAT"], zipObj["LON"])
     if(float(distance) < float(radius)):
       acceptableSites.append(c['hostname'])
-  
+  logging.debug("ACCEPTABLE SITES: %s" % acceptableSites)
   return acceptableSites
 
 def zipIt(zipcode,csvFile):

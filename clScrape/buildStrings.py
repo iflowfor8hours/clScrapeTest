@@ -1,3 +1,9 @@
+#Builds the URL string to be scraped
+import logging
+logging.basicConfig(level=logging.DEBUG,
+                    format='[%(levelname)s] (%(threadName)-10s_ %(message)s',
+                    )
+
 def getStrings(applicableSites, vals):
   finalStringList = []
   
@@ -8,10 +14,12 @@ def getStrings(applicableSites, vals):
     stringList = getYears(stringList,vals)
     stringList = getKeyWords(stringList,vals)
     for s in stringList:
+      #string is the url, querySet is the keyword argument used ("5.4","needs", etc)
       finalStringList.append({'string':s[0],'querySet':s[1]})
-    
+  logging.debug("FINAL STRING LIST " + str(finalStringList)) 
   return finalStringList
 
+#make and model are queried using autoMakeModel=X X could be [MAKE or MODEL or MAKE+MODEL]
 def getMake(searchStrings,vals):
   returnList = []
   for make, value in vals.iteritems():
@@ -34,6 +42,7 @@ def getModel(searchStrings, vals):
     return returnList
   return searchStrings
 
+#years are queried using "autoMinYear=YEAR" and "autoMaxYear=YEAR"
 def getYears(searchStrings,vals):
   returnList = []
   if(vals['minYear'] or vals['maxYear']):
@@ -58,6 +67,8 @@ def getYears(searchStrings,vals):
     return returnList
   return searchStrings
 
+#keywords are queried using "query=X" wher x is [QUERY or "QUERY+QUERY2"(for ANDING)]
+#keywords are passed back for use in html string
 def getKeyWords(stringList,vals):
   returnList = []
   for s in stringList:
@@ -70,4 +81,7 @@ def getKeyWords(stringList,vals):
         returnList.append([s + keywords +'"',keywords])  
   if(len(returnList)>0):
     return returnList
-  return stringList
+  else:
+    for s in stringList:
+      returnList.append([s,""])
+  return returnList
