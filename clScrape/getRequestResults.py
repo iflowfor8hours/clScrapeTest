@@ -18,10 +18,13 @@ def setObjs():
   
 def getRequestResults(sites):
   setObjs()
-  logging.debug("BEGINNING LENGTH OF pageObjs: " + str(len(pageObjs)))
   sortedObjs = []
-  #Create a thread for each web page
-  for i in range(len(sites)):
+  #Create a thread for each web page (cap at 250)
+  #To increase or reduce threads, change the 250 value below
+  numThreads = min(len(sites),250)
+  logging.debug("Using  " + str(numThreads) + " Threads")
+  
+  for i in range(numThreads):
     t = Thread(target=gotoSite, args=(pageQueue,))
     t.setDaemon = True
     t.start()
