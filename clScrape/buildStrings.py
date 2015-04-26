@@ -12,6 +12,7 @@ def getStrings(applicableSites, vals):
     stringList = getMake(stringList,vals)
     stringList = getModel(stringList,vals)
     stringList = getYears(stringList,vals)
+    stringList = getPrice(stringList,vals)
     stringList = getKeyWords(stringList,vals)
     for s in stringList:
       #string is the url, querySet is the keyword argument used ("5.4","needs", etc)
@@ -61,6 +62,31 @@ def getYears(searchStrings,vals):
             s = s + "&" + "autoMaxYear=" + vals['maxYear']
         elif(vals['maxYear']):
           s = s + "autoMaxYear=" + vals['maxYear']
+        returnList.append(s)
+       
+  if(len(returnList)>0):
+    return returnList
+  return searchStrings
+
+#prices are queried using "minAsk=PRICE" and "maxAsk=PRICE"
+def getPrice(searchStrings,vals):
+  returnList = []
+  if(vals['minPrice'] or vals['maxPrice']):
+    if(searchStrings[0].find("=")>0):
+      for s in searchStrings:
+        if(vals['minPrice']):
+          s = s + "&" + "minAsk=" + vals['minPrice']
+        if(vals['maxPrice']):
+          s = s + "&" + "maxAsk=" + vals['maxPrice']
+        returnList.append(s)
+    else:
+      for s in searchStrings:
+        if(vals['minPrice']):
+          s = s + "minAsk=" + vals['minPrice']
+          if(vals['maxPrice']):
+            s = s + "&" + "maxAsk=" + vals['maxAsk']
+        elif(vals['maxPrice']):
+          s = s + "maxAsk=" + vals['maxPrice']
         returnList.append(s)
        
   if(len(returnList)>0):
