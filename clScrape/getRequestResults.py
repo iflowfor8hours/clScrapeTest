@@ -19,7 +19,7 @@ def setObjs():
 def getRequestResults(sites):
   setObjs()
   sortedObjs = []
-  #Create a thread for each web page (cap at 50)
+  #Create a thread for each web page (cap at 50 for testing)
   #To increase or reduce threads, change the 50 value below
   numThreads = min(len(sites),50)
   logging.debug("Using  " + str(numThreads) + " Threads")
