@@ -19,9 +19,9 @@ def setObjs():
 def getRequestResults(sites):
   setObjs()
   sortedObjs = []
-  #Create a thread for each web page (cap at 250)
-  #To increase or reduce threads, change the 250 value below
-  numThreads = min(len(sites),250)
+  #Create a thread for each web page (cap at 50)
+  #To increase or reduce threads, change the 50 value below
+  numThreads = min(len(sites),50)
   logging.debug("Using  " + str(numThreads) + " Threads")
   
   for i in range(numThreads):
@@ -48,7 +48,7 @@ def gotoSite(q):
     name = s[7:index]
     request = Request(s)
     try :
-      response = urlopen(request)
+      response = urlopen(request, timeout=10)
       cl = response.read()
       pageObjs.append({"linkRoot":"http://" + name + ".craigslist.org","page":cl,"querySet":site['querySet']})
     except:
