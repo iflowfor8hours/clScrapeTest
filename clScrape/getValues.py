@@ -27,7 +27,7 @@ def getValues(app,vals):
           linkVals.append(val)
         truckVals = []
       except:
-        print "Empty val set? Emptying truckVals"
+        print "Empty val set?"
         truckVals = []
       currentRoot = myPages['linkRoot']
       linkVals.append("<h5>Results from " + myPages['linkRoot'] + "</h5>")
@@ -36,6 +36,7 @@ def getValues(app,vals):
     tempVals = parseHTML(myPages['page'],myPages['linkRoot'])
     for t in tempVals:
       t['querySet'] = myPages['querySet']
+      t['url'] = myPages['url']
       truckVals.append(t)
   
   #Clean up pages from final cl root site (eauclaire.craigslist.org, etc)
@@ -54,8 +55,12 @@ def getValues(app,vals):
 def turnToHTML(truckVals):
   linkVals = []
   for entry in truckVals:
-    linkString = entry['town'] + " " + entry['price'] + " <a href='" 
-    linkString = linkString + entry['link'] +"'>" + entry['description'] + "</a> (" 
-    linkString = linkString + entry['querySet'] + " )<br />";
-    linkVals.append(linkString)
+    if(entry['link'] == "NONE"):
+      linkString = "<a href='" + entry['url'] + "'>Connection Failed </a>(" + entry['querySet'] + ")<br />" 
+      linkVals.append(linkString)
+    else:  
+      linkString = entry['town'] + " " + entry['price'] + " <a href='" 
+      linkString = linkString + entry['link'] +"'>" + entry['description'] + "</a> (" 
+      linkString = linkString + entry['querySet'] + " )<br />";
+      linkVals.append(linkString)
   return linkVals

@@ -21,7 +21,7 @@ def getRequestResults(sites):
   sortedObjs = []
   #Create a thread for each web page (cap at 50 for testing)
   #To increase or reduce threads, change the 50 value below
-  numThreads = min(len(sites),50)
+  numThreads = min(len(sites),20)
   logging.debug("Using  " + str(numThreads) + " Threads")
   
   for i in range(numThreads):
@@ -46,13 +46,16 @@ def gotoSite(q):
     s = site['string']
     index = s.index('.')
     name = s[7:index]
-    request = Request(s)
     try :
+      request = Request(s)
       response = urlopen(request, timeout=10)
       cl = response.read()
-      pageObjs.append({"linkRoot":"http://" + name + ".craigslist.org","page":cl,"querySet":site['querySet']})
+      pageObjs.append({"linkRoot":"http://" + name + ".craigslist.org","page":cl,"querySet":site['querySet'], "url":s})
     except:
-      print 'nothing to see here'
+      try:
+        pageObjs.append({"linkRoot":"http://" + name + ".craigslist.org", "page":'TIMEOUT',  "querySet":site['querySet'], "url":s})
+      except:
+        logging.debug("UNRECOVERABLE FAILURE")
     #announce process complete
     logging.debug("Processed: %s" % site['string'] )
     q.task_done()
