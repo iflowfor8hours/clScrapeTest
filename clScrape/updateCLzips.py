@@ -20,7 +20,9 @@ def writeToCSV(cld):
   with open('clData.csv','w') as csvfile:
     clWriter = csv.writer(csvfile,delimiter=',',quotechar='|',quoting=csv.QUOTE_MINIMAL)
     for c in cls:
-      clWriter.writerow([ c['lat'], c['lon'], c['hostname'], c['name'] ])
+      #restrict to US, comment line below for international
+      if(c['country'] == 'US'):
+        clWriter.writerow([ c['lat'], c['lon'], c['hostname'], c['name'] ])
       
 cls = getClSites()
 writeToCSV(cls)

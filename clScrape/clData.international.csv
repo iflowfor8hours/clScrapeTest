@@ -11,6 +11,7 @@
 39.739201,-104.984001,denver,denver
 33.748901,-84.388100,atlanta,atlanta
 30.266899,-97.742798,austin,austin
+49.250500,-123.112000,vancouver,|vancouver, BC|
 39.952202,-75.164200,philadelphia,philadelphia
 33.448299,-112.072998,phoenix,phoenix
 44.980000,-93.263603,minneapolis,minneapolis
@@ -18,6 +19,8 @@
 32.783298,-96.800003,dallas,dallas
 42.331402,-83.045799,detroit,detroit metro
 29.763100,-95.363098,houston,houston
+51.517101,-0.106196,london,london
+43.648102,-79.404198,toronto,toronto
 36.174999,-115.136002,lasvegas,las vegas
 41.499401,-81.695602,cleveland,cleveland
 21.311399,-157.796005,honolulu,hawaii
@@ -41,6 +44,7 @@
 35.149399,-90.048897,memphis,memphis
 43.038898,-87.906403,milwaukee,milwaukee
 36.840000,-76.269997,norfolk,norfolk
+45.508099,-73.555000,montreal,montreal
 35.084400,-106.651001,albuquerque,albuquerque
 61.196201,-149.886002,anchorage,anchorage
 43.613602,-116.202003,boise,boise
@@ -55,8 +59,34 @@
 36.072498,-79.792198,greensboro,greensboro
 34.420799,-119.696999,santabarbara,santa barbara
 35.373299,-119.017998,bakersfield,bakersfield
+-33.868301,151.209000,sydney,sydney
+-37.783298,144.966995,melbourne,melbourne
+-27.466700,153.033005,brisbane,brisbane
+-31.955400,115.859001,perth,perth
+-34.933300,138.582993,adelaide,adelaide
+-36.853001,174.764999,auckland,auckland
 36.153900,-95.992500,tulsa,tulsa
+53.480000,-2.240000,manchester,manchester
+52.480000,-1.910000,birmingham,|birmingham, UK|
+55.869999,-4.270000,glasgow,glasgow
+53.342800,-6.266100,dublin,dublin
+55.950001,-3.220000,edinburgh,edinburgh
+45.421398,-75.691902,ottawa,ottawa
+51.054401,-114.067001,calgary,calgary
+53.547199,-113.500999,edmonton,edmonton
+49.883301,-97.150002,winnipeg,winnipeg
 30.331900,-81.655800,jacksonville,jacksonville
+48.874199,2.346950,paris,paris
+52.369999,4.890000,amsterdam,amsterdam
+41.385700,2.169940,barcelona,barcelona
+12.983300,77.583298,bangalore,bangalore
+18.964701,72.825798,mumbai,mumbai
+28.654400,77.225601,delhi,delhi
+22.299999,114.167000,hongkong,hong kong
+35.683300,139.766998,tokyo,tokyo
+1.296280,103.843002,singapore,singapore
+14.592200,121.001999,manila,manila
+19.433333,-99.133333,mexicocity,mexico city
 39.529701,-119.813004,reno,reno
 44.461201,-73.193703,burlington,vermont
 44.052200,-123.085999,eugene,eugene
@@ -70,6 +100,25 @@
 36.600300,-121.893997,monterey,monterey
 33.731499,-117.862000,orangecounty,orange co
 34.052799,-117.627998,inlandempire,inland empire
+59.919399,10.745700,oslo,norway
+59.337399,18.060200,stockholm,sweden
+55.674999,12.568700,copenhagen,copenhagen
+52.523300,13.412700,berlin,berlin
+50.850000,4.350000,brussels,belgium
+40.400002,-3.683300,madrid,madrid
+45.464001,9.191570,milan,milan
+47.366699,8.550000,zurich,zurich
+-23.566999,-46.632999,saopaulo,sao paulo
+-34.603600,-58.381699,buenosaires,buenos aires
+54.599998,-5.916670,belfast,belfast
+51.478001,-3.177100,cardiff,cardiff
+51.459999,-2.600000,bristol,bristol
+53.416698,-3.000000,liverpool,liverpool
+37.583302,127.000000,seoul,seoul
+34.660301,135.522995,osaka,osaka
+41.900002,12.500000,rome,rome
+48.211899,16.359301,vienna,vienna
+53.810001,-1.550000,leeds,leeds
 26.715000,-80.053596,westpalmbeach,west palm bch
 26.629999,-81.849998,fortmyers,fort myers
 43.154701,-77.615799,rochester,|rochester, NY|
@@ -81,6 +130,35 @@
 31.758600,-106.486000,elpaso,el paso
 37.988701,-84.477699,lexington,lexington
 32.298599,-90.184700,jackson,|jackson, MS|
+31.233299,121.467003,shanghai,shanghai
+-33.976700,18.424400,capetown,cape town
+55.750000,37.583302,moscow,moscow
+50.078300,14.414100,prague,prague
+-22.908300,-43.243599,rio,rio de janeiro
+53.568600,10.038600,hamburg,hamburg
+50.116699,8.683330,frankfurt,frankfurt
+48.133301,11.566700,munich,munich
+59.922001,30.322300,stpetersburg,st petersburg
+37.980999,23.716900,athens,greece
+60.182499,24.947201,helsinki,finland
+46.200001,6.150000,geneva,geneva
+52.232399,21.001699,warsaw,poland
+41.042099,29.009399,istanbul,turkey
+43.297501,5.377200,marseilles,marseille
+45.766899,4.834200,lyon,lyon
+40.846001,14.251000,naples,napoli
+43.771702,11.253600,florence,florence
+47.500000,19.049999,budapest,budapest
+39.901299,116.389000,beijing,beijing
+23.766701,121.000000,taipei,taiwan
+13.920200,101.016998,bangkok,thailand
+-6.267000,106.800003,jakarta,indonesia
+-33.462399,-70.640701,santiago,chile
+-12.103800,-77.058098,lima,peru
+32.083302,34.799999,telaviv,tel aviv
+31.787100,35.204800,jerusalem,jerusalem
+30.066700,31.247900,cairo,egypt
+54.977600,-1.613620,newcastle,|newcastle, UK|
 43.073101,-89.401100,madison,madison
 40.273602,-76.884697,harrisburg,harrisburg
 40.599998,-75.500000,allentown,allentown
@@ -90,6 +168,18 @@
 35.600800,-82.554199,asheville,asheville
 42.270802,-83.726402,annarbor,ann arbor
 42.349998,-73.000000,westernmass,western mass
+44.637390,-63.588867,halifax,halifax
+46.890202,-71.218903,quebec,quebec
+52.136902,-106.641998,saskatoon,saskatoon
+48.432800,-123.334999,victoria,victoria
+10.412200,-66.882004,caracas,venezuela
+9.924700,-84.078003,costarica,costa rica
+18.261299,-66.435997,puertorico,puerto rico
+32.530800,-117.019997,tijuana,tijuana
+13.081000,80.274002,chennai,chennai
+17.366699,78.466698,hyderabad,hyderabad
+22.569700,88.369698,kolkata,kolkata
+-26.194901,28.037100,johannesburg,johannesburg
 30.438101,-84.280800,tallahassee,tallahassee
 39.728600,-121.835999,chico,chico
 40.586700,-122.390999,redding,redding
@@ -115,7 +205,11 @@
 34.277000,-119.044998,ventura,ventura
 33.830299,-116.543999,palmsprings,palm springs
 38.833900,-104.820999,cosprings,colo springs
+51.751099,-1.255830,oxford,oxford
 42.732498,-84.555603,lansing,lansing
+43.243999,-79.869003,hamilton,hamilton
+43.452801,-80.490799,kitchener,kitchener
+25.269699,55.309502,dubai,emirates
 42.326698,-122.874001,medford,medford
 48.759701,-122.487000,bellingham,bellingham
 35.686901,-105.936996,santafe,santa fe
@@ -134,6 +228,8 @@
 34.730301,-86.586098,huntsville,huntsville
 44.943100,-123.033997,salem,salem
 44.058300,-121.314003,bend,bend
+43.033298,-81.150002,londonon,|london, ON|
+42.287498,-83.005798,windsor,windsor
 26.121901,-80.143600,fortlauderdale,ft lauderdale
 27.336100,-82.530800,sarasota,sarasota
 29.210600,-81.023102,daytona,daytona beach
@@ -143,6 +239,7 @@
 44.811401,-91.498299,eauclaire,eau claire
 44.261902,-88.415298,appleton,appleton
 35.198101,-111.651001,flagstaff,flagstaff
+13.450000,144.783005,micronesia,micronesia
 46.602200,-120.504997,yakima,yakima
 43.100800,-75.233101,utica,utica
 42.098598,-75.918297,binghamton,binghamton
@@ -191,11 +288,31 @@
 37.229401,-80.414200,blacksburg,blacksburg
 40.233898,-111.657997,provo,provo
 36.062500,-94.157204,fayar,|fayetteville, AR|
+32.016201,71.692596,pakistan,pakistan
+23.851101,89.925003,bangladesh,bangladesh
+33.883301,35.500000,beirut,beirut
+3.570990,101.991997,malaysia,malaysia
+8.751540,-79.877197,panama,panama
+19.093300,-74.619102,caribbean,caribbean
+38.716702,-9.133330,portugal,portugal
+-43.500000,172.600006,christchurch,christchurch
+-41.288898,174.776993,wellington,wellington
+-29.843000,30.955400,durban,durban
+46.333302,-63.500000,pei,PEI
+47.567500,-52.707222,newfoundland,|st john's, NL|
+43.702801,7.269170,cotedazur,cote d'azur
 41.511299,-90.594398,quadcities,quad cities
 32.351101,-95.300797,easttexas,east TX
 44.459301,-84.814499,nmi,northern MI
+45.433300,12.316700,venice,venice
+37.553299,14.153100,sicily,sicilia
+52.209999,0.130000,cambridge,cambridge
+50.936401,6.959500,cologne,cologne
+13.994400,108.017998,vietnam,vietnam
 38.254398,-104.609001,pueblo,pueblo
 44.021702,-92.469704,rmn,|rochester, MN|
+18.523600,73.847801,pune,pune
+57.150002,-2.100000,aberdeen,aberdeen
 40.014999,-105.269997,boulder,boulder
 39.070400,-108.552002,westslope,western slope
 43.396099,-124.167000,oregoncoast,oregon coast
@@ -256,6 +373,46 @@
 28.039200,-81.949997,lakeland,lakeland
 37.081474,-88.077393,westky,western KY
 41.638500,-71.048599,southcoast,south coast
+46.500000,-66.750000,newbrunswick,new brunswick
+49.890202,-119.490997,kelowna,kelowna
+50.676701,-120.332001,kamloops,kamloops
+49.164700,-123.938004,nanaimo,nanaimo
+53.913601,-122.750000,princegeorge,prince george
+46.490799,-80.991203,sudbury,sudbury
+44.231400,-76.484703,kingston,|kingston, ON|
+43.088902,-79.332298,niagara,niagara region
+48.402802,-89.267998,thunderbay,thunder bay
+44.308998,-78.313004,peterborough,peterborough
+44.394501,-79.690399,barrie,barrie
+45.399899,-71.919899,sherbrooke,sherbrooke
+32.799999,34.983299,haifa,haifa
+-12.983300,-38.516701,salvador,|salvador, bahia|
+5.068890,-74.526299,colombia,colombia
+39.476700,-0.374444,valencia,valencia
+37.384300,-5.979310,sevilla,sevilla
+44.500000,11.350000,bologna,bologna
+45.069599,7.684940,torino,torino
+50.830002,-0.155556,brighton,brighton
+50.572800,-4.498900,devon,devon & cornwall
+53.240601,-0.539703,eastmids,east midlands
+53.383301,-1.466670,sheffield,sheffield
+52.633701,1.292610,norwich,east anglia
+51.091202,-1.218800,hampshire,hampshire
+20.666100,-103.351997,guadalajara,guadalajara
+20.645599,-88.593803,yucatan,yucatan
+25.846100,-111.973000,bajasur,baja sur
+20.603100,-105.234001,pv,puerto vallarta
+25.666700,-100.300003,monterrey,monterrey
+23.145399,113.334999,guangzhou,guangzhou
+10.000000,76.500000,kerala,kerala
+43.605301,1.442800,toulouse,toulouse
+44.838600,-0.578333,bordeaux,bordeaux
+50.632500,3.058330,lille,lille
+48.582901,7.743750,strasbourg,strasbourg
+45.986500,4.025120,loire,loire valley
+48.776699,9.177500,stuttgart,stuttgart
+52.368900,9.712600,hannover,hannover
+51.221100,6.779250,dusseldorf,dusseldorf
 34.540001,-112.468002,prescott,prescott
 33.394199,-104.522003,roswell,roswell
 44.163601,-93.999199,mankato,mankato
@@ -266,6 +423,9 @@
 42.245800,-84.401398,jxn,|jackson, MI|
 30.832500,-83.278603,valdosta,valdosta
 39.183601,-96.571404,ksu,manhattan
+26.333300,127.800003,okinawa,okinawa
+15.373300,73.939201,goa,goa
+21.012800,-101.273003,guanajuato,guanajuato
 40.924999,-98.341698,grandisland,grand island
 36.115601,-97.058098,stillwater,stillwater
 43.598000,-84.780998,centralmich,central MI
@@ -284,6 +444,7 @@
 38.443298,-78.872803,harrisonburg,harrisonburg
 41.735600,-111.834000,logan,logan
 29.883101,-97.941101,sanmarcos,san marcos
+23.033300,72.616699,ahmedabad,ahmedabad
 42.000000,-74.383301,catskills,catskills
 42.209702,-79.466698,chautauqua,chautauqua
 42.089699,-76.808098,elmira,elmira
@@ -304,6 +465,87 @@
 31.554399,-110.303001,sierravista,sierra vista
 42.563099,-114.459999,twinfalls,twin falls
 29.281099,-94.825798,galveston,galveston
+49.051399,-122.278999,abbotsford,fraser valley
+50.124401,-122.959999,whistler,|whistler, BC|
+49.700901,-125.001999,comoxvalley,comox valley
+49.511101,-115.766998,cranbrook,kootenays
+52.274700,-113.815002,reddeer,red deer
+49.696098,-112.830002,lethbridge,lethbridge
+56.742199,-111.443001,ftmcmurray,ft mcmurray
+50.455299,-104.610001,regina,regina
+46.356899,-72.546204,troisrivieres,trois-rivieres
+48.410099,-71.063698,saguenay,saguenay
+45.029999,-74.739998,cornwall,|cornwall, ON|
+43.544601,-80.255096,guelph,guelph
+44.166698,-77.383301,belleville,|belleville, ON|
+42.411289,-82.194214,chatham,chatham-kent
+46.519199,-84.322098,soo,|sault ste marie, ON|
+42.966702,-82.400002,sarnia,sarnia
+44.574799,-80.952797,owensound,owen sound
+62.466599,-114.445000,territories,territories
+-35.282799,149.130997,canberra,canberra
+-42.880600,147.324997,hobart,tasmania
+-12.466700,130.832993,darwin,darwin
+52.970001,-1.180000,nottingham,nottingham
+51.255001,0.863800,kent,kent
+51.383301,-2.366700,bath,bath
+52.408100,-1.510600,coventry,coventry
+52.921902,-1.475800,derby,derby
+51.783100,0.666733,essex,essex
+56.450001,-2.983330,dundee,dundee
+22.542999,114.056999,shenzhen,shenzhen
+30.273100,120.177002,hangzhou,hangzhou
+35.166698,136.917007,nagoya,nagoya
+43.066700,141.350006,sapporo,sapporo
+33.585800,130.403000,fukuoka,fukuoka
+34.384800,132.455002,hiroshima,hiroshima
+28.500000,-106.000000,chihuahua,chihuahua
+29.083300,-110.949997,hermosillo,hermosillo
+19.187201,-96.136398,veracruz,veracruz
+19.046900,-98.209396,puebla,puebla
+23.233101,-106.411003,mazatlan,mazatlan
+17.083300,-96.750000,oaxaca,oaxaca
+31.737700,-106.487000,juarez,ciudad juarez
+16.851700,-99.909698,acapulco,acapulco
+-19.891701,-43.947800,belohorizonte,belo horizonte
+-15.788300,-47.926498,brasilia,brasilia
+-30.004900,-51.185299,portoalegre,porto alegre
+-8.055560,-34.891102,recife,recife
+-25.468700,-49.253502,curitiba,curitiba
+-3.828630,-38.595001,fortaleza,fortaleza
+49.396702,8.679200,heidelberg,heidelberg
+51.333333,12.383333,leipzig,leipzig
+51.049999,13.733300,dresden,dresden
+53.076900,8.808890,bremen,bremen
+51.466702,4.466670,essen,essen / ruhr
+43.611900,3.877220,montpellier,montpellier
+45.189999,5.720000,grenoble,grenoble
+48.106098,-1.671300,rennes,brittany
+49.436901,1.087650,rouen,normandy
+47.566002,7.600000,basel,basel
+46.953999,7.447360,bern,bern
+43.116699,12.383300,perugia,perugia
+44.416698,8.923890,genoa,genoa
+40.000000,9.000000,sardinia,sardinia
+38.349998,-0.480000,alicante,alicante
+39.605701,2.966310,baleares,baleares
+43.250000,-2.966700,bilbao,bilbao
+36.532299,-6.291730,cadiz,cadiz
+28.480801,-16.273800,canarias,canarias
+37.174198,-3.597500,granada,granada
+36.711899,-4.435730,malaga,malaga
+38.700001,-9.183300,lisbon,lisbon
+41.166698,-8.583330,porto,porto
+37.020000,-7.930000,faro,faro / algarve
+-34.866699,-56.166698,montevideo,montevideo
+49.611698,6.130000,luxembourg,luxembourg
+-0.225219,-78.519302,quito,ecuador
+45.813499,15.985100,zagreb,croatia
+7.078410,125.612000,davaocity,davao city
+10.426400,123.797997,cebu,cebu
+22.723600,75.860603,indore,indore
+26.920000,75.820000,jaipur,jaipur
+31.966700,35.299999,ramallah,west bank
 42.584702,-87.821098,racine,kenosha-racine
 42.682800,-89.018600,janesville,janesville
 43.234200,-86.248299,muskegon,muskegon
@@ -326,6 +568,59 @@
 43.750801,-87.714401,sheboygan,|sheboygan, WI|
 41.984001,-86.066902,swmi,southwest MI
 41.448898,-82.708099,sandusky,sandusky
+44.433300,26.100000,bucharest,romania
+5.550000,-0.216667,accra,ghana
+9.033330,38.700001,addisababa,ethiopia
+29.369699,47.978298,kuwait,kuwait
+-19.043100,-65.259201,lapaz,bolivia
+64.146004,-21.942301,reykjavik,reykjavik
+34.020000,-6.830000,casablanca,morocco
+36.802799,10.179700,tunis,tunisia
+-1.283330,36.816700,kenya,kenya
+50.433300,30.516701,ukraine,ukraine
+42.697498,23.324100,bulgaria,bulgaria
+14.621100,-90.526901,guatemala,guatemala
+12.150800,-86.268303,managua,nicaragua
+13.708600,-89.203102,elsalvador,el salvador
+33.338600,44.393902,baghdad,iraq
+35.671902,51.424400,tehran,iran
+-28.000000,153.432999,goldcoast,gold coast
+-32.927101,151.776001,ntl,|newcastle, NSW|
+-16.916700,145.766998,cairns,cairns
+-34.433300,150.882996,wollongong,wollongong
+-45.891918,170.506439,dunedin,dunedin
+-25.706900,28.229401,pretoria,pretoria
+38.266667,140.866667,sendai,sendai
+30.591000,114.305000,wuhan,wuhan
+41.803800,123.434100,shenyang,shenyang
+32.050000,118.766667,nanjing,nanjing
+38.912201,121.601997,dalian,dalian
+29.558333,106.566667,chongqing,chongqing
+30.666700,104.067001,chengdu,chengdu
+34.266667,108.900000,xian,xi'an
+8.482220,124.647003,cdo,cagayan de oro
+10.696900,122.564003,iloilo,iloilo
+10.631100,122.978996,bacolod,bacolod
+6.910280,122.073997,zamboanga,zamboanga
+15.223300,120.579002,pampanga,pampanga
+13.500000,123.500000,naga,bicol region
+30.737200,76.787201,chandigarh,chandigarh
+26.847000,80.947000,lucknow,lucknow
+20.270000,85.840000,bhubaneswar,bhubaneswar
+21.166700,72.833298,surat,surat surat
+49.447800,11.068300,nuremberg,nuremberg
+46.518902,6.676360,lausanne,lausanne
+18.341900,-64.930702,virgin,virgin islands
+18.466700,-69.900002,santodomingo,dominican
+49.450001,7.750000,kaiserslautern,kaiserslautern
+50.050098,-110.667999,hat,medicine hat
+56.250099,-117.286003,peace,peace country
+53.169827,-122.527771,cariboo,cariboo
+49.998901,-123.753998,sunshine,sunshine coast
+54.232800,-129.837006,skeena,skeena-bulkley
+62.456001,-114.352997,yellowknife,yellowknife
+60.716099,-135.054001,whitehorse,whitehorse
+43.133400,-80.266403,brantford,brantford
 43.417019,-83.092346,thumb,the thumb
 42.321201,-85.179703,battlecreek,battle creek
 41.916000,-83.397697,monroemi,monroe
