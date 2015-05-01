@@ -4,19 +4,18 @@ logging.basicConfig(level=logging.DEBUG,
                     format='[%(levelname)s] (%(threadName)-10s_ %(message)s',
                     )
 
-def getStrings(applicableSites, vals):
+def getStrings(vals):
   finalStringList = []
   
-  for ap in applicableSites:
-    stringList = ["http://" + ap + ".craigslist.org/search/sso?"]
-    stringList = getMake(stringList,vals)
-    stringList = getModel(stringList,vals)
-    stringList = getYears(stringList,vals)
-    stringList = getPrice(stringList,vals)
-    stringList = getKeyWords(stringList,vals)
-    for s in stringList:
-      #string is the url, querySet is the keyword argument used ("5.4","needs", etc)
-      finalStringList.append({'string':s[0],'querySet':s[1]})
+  stringList = ["http://" + vals['site'] + ".craigslist.org/search/sso?"]
+  stringList = getMake(stringList,vals)
+  stringList = getModel(stringList,vals)
+  stringList = getYears(stringList,vals)
+  stringList = getPrice(stringList,vals)
+  stringList = getKeyWords(stringList,vals)
+  for s in stringList:
+    #string is the url, querySet is the keyword argument used ("5.4","needs", etc)
+    finalStringList.append({'string':s[0],'querySet':s[1]})
   logging.debug("FINAL STRING LIST " + str(finalStringList)) 
   return finalStringList
 

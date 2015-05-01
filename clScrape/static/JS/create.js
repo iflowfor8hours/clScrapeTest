@@ -63,8 +63,20 @@ function uncheckItems(vals){
 /*Used to display Scrape Results*/
 function displayData(formData){
   var results = document.getElementById('results');
-  console.log(formData.hello);
-  for(var x=0; x<formData.hello.length;x++){
-    results.innerHTML += formData.hello[x];
+  myFormData = formData.formData;
+  listLen = formData.hello.length;
+  for(var x=1; x<=listLen;x++){
+    myFormData['site'] = formData.hello[x-1];
+    myFormData['progress'] = "( " + x + " of " + listLen + " )";
+    $.ajax({
+      type: "POST",
+      url: "/siteResults",
+      data: {vals:myFormData},
+      success: function(dataResult){
+        for(var i=0; i<dataResult.site.length;i++){
+          results.innerHTML += dataResult.site[i];
+        }
+      }
+    });
   }
 }

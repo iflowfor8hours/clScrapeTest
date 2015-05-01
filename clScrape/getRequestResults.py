@@ -18,9 +18,8 @@ def setObjs():
   
 def getRequestResults(sites):
   setObjs()
-  sortedObjs = []
-  #Create a thread for each web page (cap at 50 for testing)
-  #To increase or reduce threads, change the 50 value below
+  #Create a thread for each web page (cap at 20 for testing)
+  #To increase or reduce threads, change the 20 value below
   numThreads = min(len(sites),20)
   logging.debug("Using  " + str(numThreads) + " Threads")
   
@@ -33,10 +32,8 @@ def getRequestResults(sites):
     pageQueue.put(s)
   #wait for queue to process
   pageQueue.join()
-  #sort by location
   logging.debug("ENDING LENGTH OF pageObjs: " + str(len(pageObjs)))
-  sortedObjs = sorted(pageObjs, key=lambda k: k['linkRoot'])
-  return sortedObjs
+  return pageObjs
 
 def gotoSite(q):
   while True:

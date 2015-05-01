@@ -6,13 +6,17 @@ from parseHTML import parseHTML
 
 #This is the equivalent of "main" when Search is clicked.
 
+def getAppSites(app,vals):
+  applicableSites = []
+  applicableSites = getSites(vals['zipCode'],vals['searchRadius']) #Get cl sites within the radius
+  #Return to website  
+  return render_template('base.html', CRS = {'hello':applicableSites, 'formData':vals})
+
 def getValues(app,vals):
   linkVals = []
   truckVals = []
-  applicableSites = []
-  
-  applicableSites = getSites(vals['zipCode'],vals['searchRadius']) #Get cl sites within the radius
-  searchStrings = getStrings(applicableSites,vals) #Builds url strings to be scraped
+  progress = vals['progress']  
+  searchStrings = getStrings(vals) #Builds url strings to be scraped
   myPages = getRequestResults(searchStrings) #HTML pages from url strings   
   currentRoot = ""
   for myPages in myPages:
@@ -22,15 +26,15 @@ def getValues(app,vals):
     #once gathered, turn results into html lines, add header line to show where results are from
     else: 
       try:
-        vals = turnToHTML(truckVals)
-        for val in vals:
+        values = turnToHTML(truckVals)
+        for val in values:
           linkVals.append(val)
         truckVals = []
       except:
         print "Empty val set?"
         truckVals = []
       currentRoot = myPages['linkRoot']
-      linkVals.append("<h5>Results from " + myPages['linkRoot'] + "</h5>")
+      linkVals.append("<h5>Results from " + myPages['linkRoot'] + "   " + progress + "</h5>")
     
     #parse html pages with xpath/xquery
     tempVals = parseHTML(myPages['page'],myPages['linkRoot'])
@@ -48,9 +52,7 @@ def getValues(app,vals):
   except:
     print "Empty val set"
   
-  #Append to website  
-  return render_template('base.html', CRS = {'hello':linkVals})
-
+  return linkVals
 #Build HTML lines
 def turnToHTML(truckVals):
   linkVals = []

@@ -12,15 +12,22 @@ def getSites(zipCode,radius):
   csvFile = 'zipcode.csv'
   clFile = 'clData.csv'
   acceptableSites = []
+  sortedObjs = []
+  sortedSites = []
   zipObj = zipIt(zipCode,csvFile)
   clList = getCL(clFile)
 
   for c in clList:
     distance = distance_on_unit_sphere(c["LAT"], c["LON"], zipObj["LAT"], zipObj["LON"])
     if(float(distance) < float(radius)):
-      acceptableSites.append(c['hostname'])
+      acceptableSites.append({'name':c['hostname'],'distance':distance})
   logging.debug("ACCEPTABLE SITES: %s" % acceptableSites)
-  return acceptableSites
+  
+  sortedObjs = sorted(acceptableSites, key=lambda k: float(k['distance']))
+  for s in sortedObjs:
+    sortedSites.append(s['name'])
+  
+  return sortedSites
 
 def zipIt(zipcode,csvFile):
   with open(csvFile, mode='r') as infile:

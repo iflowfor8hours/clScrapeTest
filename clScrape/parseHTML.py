@@ -67,5 +67,10 @@ def parseHTML(myPage,linkRoot):
         truckValues.append(trucksObj)
       else:
         logging.debug("Skipping for malformed data, missing link: %s" % trucksObj )
-        
-  return truckValues
+  sortedObjs = []
+  try:
+    sortedObjs = sorted(truckValues, key=lambda k: float(k['price'][1:]))      
+  except:
+    logging.debug("Error Sorting truckValues")
+    sortedObjs = truckValues
+  return sortedObjs
