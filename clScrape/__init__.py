@@ -4,8 +4,6 @@ from werkzeug import secure_filename
 
 app = Flask(__name__, static_url_path='')
   
-def getFormData():
-  return formData
 #is it possible to do a redirect after python has done it's thing???
 @app.route('/',methods=['POST'])
 def setFunction():
