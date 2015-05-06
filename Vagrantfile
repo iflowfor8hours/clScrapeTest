@@ -1,14 +1,17 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
-#
+# sudo apt-get update
 $script = <<SCRIPT
 echo Installing dependencies...
-sudo apt-get update
-sudo apt-get install -y mongodb python-pip python-virtualenv build-essential python-dev
+
+sudo apt-get install -y python-pip python-virtualenv build-essential python-dev  
+sudo apt-get install -y libxml2-dev  
+sudo apt-get install -y libxslt-dev
+sudo apt-get install -y python-lxml
 cd /vagrant
 virtualenv --no-site-packages .
 source /vagrant/bin/activate
-pip install -r /vagrant/requirements.txt
+sudo pip install -r /vagrant/requirements.txt
 cd clScrape
 python manage.py runserver > /tmp/scrape.log 2>&1 &
 echo "App running on 0.0.0.0:5000, vagrant ssh; tail -f /tmp/clScrape.log; hit it with http://localhost:5000"
