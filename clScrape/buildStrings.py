@@ -1,5 +1,5 @@
 #Builds the URL string to be scraped
-import logging
+import logging, re
 logging.basicConfig(level=logging.DEBUG,
                     format='[%(levelname)s] (%(threadName)-10s_ %(message)s',
                     )
@@ -16,7 +16,7 @@ def getStrings(vals):
   for s in stringList:
     #string is the url, querySet is the keyword argument used ("5.4","needs", etc)
     finalStringList.append({'string':s[0],'querySet':s[1]})
-  logging.debug("FINAL STRING LIST " + str(finalStringList)) 
+  #logging.debug("FINAL STRING LIST " + str(finalStringList)) 
   return finalStringList
 
 #make and model are queried using autoMakeModel=X X could be [MAKE or MODEL or MAKE+MODEL]
@@ -45,21 +45,30 @@ def getModel(searchStrings, vals):
 #years are queried using "autoMinYear=YEAR" and "autoMaxYear=YEAR"
 def getYears(searchStrings,vals):
   returnList = []
-  if(vals['minYear'] or vals['maxYear']):
+  if('minYear' in vals or 'maxYear' in vals):
+    #Validate User Entries for YEARS
+    yearReg = re.compile('^[0-9]{4}$')
+    if('minYear' in vals):
+      if not yearReg.match(vals['minYear']):
+        del vals['minYear']
+    if('maxYear' in vals):
+      if not yearReg.match(vals['maxYear']):
+        del vals['maxYear'] 
+    #End Validation
     if(searchStrings[0].find("=")>0):
       for s in searchStrings:
-        if(vals['minYear']):
+        if('minYear' in vals):
           s = s + "&" + "autoMinYear=" + vals['minYear']
-        if(vals['maxYear']):
+        if('maxYear' in vals):
           s = s + "&" + "autoMaxYear=" + vals['maxYear']
         returnList.append(s)
     else:
       for s in searchStrings:
-        if(vals['minYear']):
+        if('minYear' in vals):
           s = s + "autoMinYear=" + vals['minYear']
-          if(vals['maxYear']):
+          if('maxYear' in vals):
             s = s + "&" + "autoMaxYear=" + vals['maxYear']
-        elif(vals['maxYear']):
+        elif('maxYear' in vals):
           s = s + "autoMaxYear=" + vals['maxYear']
         returnList.append(s)
        
@@ -71,6 +80,19 @@ def getYears(searchStrings,vals):
 def getPrice(searchStrings,vals):
   returnList = []
   if(vals['minPrice'] or vals['maxPrice']):
+    #Validate User Entries for PRICE
+    
+    #TODO CHANGE IF STATEMENTS TO LOOK MORE LIKE GET YEARS
+    
+    #
+    priceReg = re.compile('^[0-9]{1,10}$')
+    if(vals['minPrice']):
+      if not priceReg.match(vals['minPrice']):
+        vals['minPrice'] = None
+    if(vals['maxPrice']):
+      if not priceReg.match(vals['maxPrice']):
+        vals['maxPrice'] = None
+    #End Validation
     if(searchStrings[0].find("=")>0):
       for s in searchStrings:
         if(vals['minPrice']):
