@@ -2,15 +2,13 @@
 # vi: set ft=ruby :
 # sudo apt-get update
 $script = <<SCRIPT
-APP_DIR = /vagrant/clScrape
-
 echo Installing dependencies...
 apt-get update
 apt-get install -y python-pip python-virtualenv build-essential python-dev libxml2-dev python-lxml libxml2-dev libxslt-dev zlib1g-dev
-cd ${APP_DIR}
+cd /vagrant/clScrape
 virtualenv .venv
-. /${APP_DIR}/.venv/bin/activate
-pip install -r /${APP_DIR}/requirements.txt
+. /vagrant/clScrape/.venv/bin/activate
+pip install -r /vagrant/requirements.txt
 python manage.py runserver > /tmp/scrape.log 2>&1 &
 echo "App running on 0.0.0.0:5000, vagrant ssh; tail -f /tmp/scrape.log; hit it with http://localhost:5000"
 SCRIPT
